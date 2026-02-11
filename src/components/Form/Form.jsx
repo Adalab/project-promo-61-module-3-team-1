@@ -24,9 +24,9 @@ const Form = () => {
             </fieldset>
         
             <fieldset className="addForm__group--upload">
-                <label for="image" className="button">Subir foto del proyecto</label>
+                <label htmlFor="image" className="button">Subir foto del proyecto</label>
                 <input className="addForm__hidden" type="file" name="image" id="image"/>
-                <label for="photo" className="button">Subir foto de la autora</label>
+                <label htmlFor="photo" className="button">Subir foto de la autora</label>
                 <input className="addForm__hidden" type="file" name="photo" id="photo"/>
                 <button className="button--large">Guardar proyecto</button>
             </fieldset>

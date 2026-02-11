@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../images/defaultAvatar.png';
-import '../styles/GetAvatar.css';
+import defaultAvatar from "../../images/defaultAvatar.png";
+import "./GetAvatar.scss";
 
 function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen

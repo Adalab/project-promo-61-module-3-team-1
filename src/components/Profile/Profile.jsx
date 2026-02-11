@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../images/defaultAvatar.png';
-import '../stylesheets/Profile.css';
+import defaultAvatar from '../../images/defaultAvatar.png';
+import "./Profile.scss";
 
 function Profile(props) {
   const avatar = props.avatar === '' ? defaultAvatar : props.avatar;

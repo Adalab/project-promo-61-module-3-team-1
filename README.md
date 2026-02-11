@@ -1,16 +1,82 @@
-# React + Vite
+// ======================================================
+//  PROYECTOS MOLONES – FRONT (React)
+// ======================================================
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con **React** que permite crear, previsualizar y compartir una tarjeta digital de un proyecto personal.
 
-Currently, two official plugins are available:
+La usuaria rellena un formulario → ve la **preview en tiempo real** → genera una **URL pública** para compartir su proyecto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+// ======================================================
+//  DEMO
+// ======================================================
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 https://TU-USUARIO.github.io/project-promo-61-module-3-team-x/
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+// ======================================================
+//  FUNCIONALIDADES
+// ======================================================
+
+✅ Formulario interactivo  
+✅ Vista previa automática en tiempo real  
+✅ Subida de imágenes (avatar + foto del proyecto)  
+✅ Validaciones de campos  
+✅ Persistencia con localStorage  
+✅ Generación de tarjeta mediante API  
+✅ Responsive design (Mobile First)  
+✅ Deploy en GitHub Pages  
+
+
+// ======================================================
+//  TECNOLOGÍAS
+// ======================================================
+
+-  React
+-  JavaScript (ES6+)
+-  Sass / CSS3
+-  Componentes reutilizables
+-  LocalStorage
+-  Fetch API
+-  Git + GitHub
+-  GitHub Pages
+
+
+// ======================================================
+//  CAPTURAS
+// ======================================================
+
+(Aquí puedes añadir screenshots)
+
+![preview](./docs/preview.png)
+
+
+// ======================================================
+//  ESTRUCTURA DEL PROYECTO
+// ======================================================
+
+src/
+│
+├─ components/
+│   ├─ Header/
+│   ├─ Footer/
+│   ├─ Form/
+│   ├─ Preview/
+│   ├─ Profile/
+│   └─ GetAvatar/
+│
+├─ images/
+├─ stylesheets/
+├─ App.jsx
+├─ main.jsx
+
+
+// ======================================================
+//  INSTALACIÓN
+// ======================================================
+
+```bash
+git clone <repo>
+cd project-promo-61-module-3-team-x
+npm install
+npm run dev
