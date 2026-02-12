@@ -3,6 +3,8 @@ import { useState } from 'react';
 import GetAvatar from './components/GetAvatar/GetAvatar';
 import Profile from './components/Profile/Profile';
 import './main.scss'
+
+
 //componentes
 import Form from './components/Form/Form';
 import Hero from './components/Hero/Hero';
