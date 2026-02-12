@@ -18,6 +18,20 @@ function App() {
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
   };
+
+  const [formData, setFormData] = useState({
+    name: "",
+    slogan: "",
+    repo: "",
+    demo: "",
+    technologies: "",
+    desc: "",
+    autor: "",
+    job: "",
+    image: "",
+    photo: "",
+  });
+
   return (
     <div>
       <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
@@ -26,8 +40,8 @@ function App() {
         <main className='main'>
           <Header></Header>
           <Hero></Hero>
-          <Preview></Preview>
-          <Form></Form>
+          <Preview formData={formData}></Preview>
+          <Form formData={formData} setFormData={setFormData}></Form>
           <Footer></Footer>
         </main>
       </div>

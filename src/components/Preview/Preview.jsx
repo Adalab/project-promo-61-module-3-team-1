@@ -1,4 +1,4 @@
-const Preview = () => {
+const Preview = ({ formData }) => {
 
     return (
          <section className="preview">
@@ -15,7 +15,7 @@ const Preview = () => {
           </div>
       
           <div className="card__project">            
-            <h3 className="card__name">Elegant Workspace</h3>
+            <h3 className="card__name">{formData.name || "Elegant Workspace"}</h3>
             <p className="card__slogan">Diseños Exclusivos</p>
             <h3 className="card__descriptionTitle">Product description</h3>
             <p className="card__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione</p>
