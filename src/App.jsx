@@ -1,8 +1,9 @@
 //import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import GetAvatar from './components/GetAvatar/GetAvatar';
 import Profile from './components/Profile/Profile';
-import './main.scss'
+import './main.scss';
+import { saveInStorage, loadFromStorage } from "./services/LocalStorage";
 
 
 //componentes
@@ -19,7 +20,9 @@ function App() {
     setAvatar(avatar);
   };
 
-  const [formData, setFormData] = useState({
+  //Estado del formulario - cargar LocalStorage
+  const [formData, setFormData] = useState(
+    loadFromStorage() || {
     name: "",
     slogan: "",
     repo: "",
@@ -31,6 +34,11 @@ function App() {
     image: "",
     photo: "",
   });
+
+  //Guardar en LocalStorage
+  useEffect (() => {
+    saveInStorage(formData)
+  }, [formData]);
 
   return (
     <div>
