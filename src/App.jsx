@@ -1,14 +1,11 @@
-
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import React from 'react';
+
 import GetAvatar from './components/GetAvatar/GetAvatar';
 import Profile from './components/Profile/Profile';
 import './main.scss';
 import { saveInStorage, loadFromStorage } from "./services/LocalStorage";
 
-
-//componentes
 import Form from './components/Form/Form';
 import Hero from './components/Hero/Hero';
 import Preview from './components/Preview/Preview';
@@ -25,51 +22,44 @@ function App() {
     setAvatar(avatar);
   };
 
-    //Estado del formulario - cargar LocalStorage
-  
   const [formData, setFormData] = useState(
     loadFromStorage() || {
-    name: "",
-    slogan: "",
-    repo: "",
-    demo: "",
-    technologies: "",
-    desc: "",
-    autor: "",
-    job: "",
-    image: "",
-    photo: "",
-  });
+      name: "",
+      slogan: "",
+      repo: "",
+      demo: "",
+      technologies: "",
+      desc: "",
+      autor: "",
+      job: "",
+      image: "",
+      photo: "",
+    }
+  );
 
-  //Guardar en LocalStorage
-  useEffect (() => {
-    saveInStorage(formData)
+  useEffect(() => {
+    saveInStorage(formData);
   }, [formData]);
 
   return (
-
+    <BrowserRouter>
       <Routes>
 
         {/* Landing */}
+        <Route path="/" element={<Landing />} />
         <Route 
-          path="/" 
-          element={<Landing />} 
-        />
-
-        {/* Página actual con formulario */}
-        <Route 
-          path="/form" 
+          path="/app" 
           element={
             <div>
               <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
               <Profile avatar={avatar} />
               <div className='container'>
                 <main className='main'>
-                  <Header />
-                  <Hero />
-                   <Preview formData={formData}></Preview>
-                   <Form formData={formData} setFormData={setFormData}></Form>
-                  <Footer />
+                  <Header></Header>
+                  <Hero></Hero>
+                  <Preview formData={formData}></Preview>
+                  <Form formData={formData} setFormData={setFormData}></Form>
+                  <Footer></Footer>
                 </main>
               </div>
             </div>
@@ -77,11 +67,8 @@ function App() {
         />
 
       </Routes>
-   
-
-        )
-      }
-
-
+    </BrowserRouter>
+  );
+}
 
 export default App;
