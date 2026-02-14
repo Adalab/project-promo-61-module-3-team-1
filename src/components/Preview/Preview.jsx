@@ -23,10 +23,10 @@ const Preview = ({ formData }) => {
             <div className="card__technicalInfo">
               <p className="card__technologies">{formData.technologies || "React JS - HTML - CSS"}</p>
           
-              <a className="icon icon__www" href="#" title="Haz click para ver el proyecto online">
+              <a className="icon icon__www" href={formData.demo ? (formData.demo.startsWith("http") ? formData.demo : `https://${formData.demo}`) : "#"} title="Haz click para ver el proyecto online">
                 Web link
               </a>
-              <a className="icon icon__github" href="#" title="Haz click para ver el código del proyecto">
+              <a className="icon icon__github" href={formData.repo ? (formData.repo.startsWith("http") ? formData.repo : `https://${formData.repo}`) : "#"} title="Haz click para ver el código del proyecto">
                 GitHub link
               </a>
             </div>

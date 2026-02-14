@@ -23,9 +23,9 @@ const handleInput = (ev) => {
                 <input className="addForm__input" type="text" id="slogan" placeholder="Slogan" name="slogan" value={formData.slogan} onChange={handleInput} />
 
                 <div className="addForm__2col">
-                    <input className="addForm__input" type="url" id="repo" placeholder="Repositorio" name="repo" value={formData.repo} onChange={handleInput} />
+                    <input className="addForm__input" type="url" id="repo" placeholder="Link al repositorio" name="repo" value={formData.repo} onChange={handleInput} />
 
-                    <input className="addForm__input" type="url" id="demo" placeholder="Demo" name="demo" value={formData.demo} onChange={handleInput} />
+                    <input className="addForm__input" type="url" id="demo" placeholder="Link a la demo" name="demo" value={formData.demo} onChange={handleInput} />
                 </div>         
 
                 <input className="addForm__input" type="text" id="technologies" placeholder="Tecnologías" name="technologies" value={formData.technologies} onChange={handleInput} />
