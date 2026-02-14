@@ -42,7 +42,6 @@ function App() {
   }, [formData]);
 
   return (
-    <BrowserRouter>
       <Routes>
 
         {/* Landing */}
@@ -67,7 +66,7 @@ function App() {
         />
 
       </Routes>
-    </BrowserRouter>
+  
   );
 }
 
