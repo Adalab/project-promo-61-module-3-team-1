@@ -1,0 +1,70 @@
+.header {
+  width: 100%;
+  padding: 8px 40px; 
+  background-color: #25203a; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__logo {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__link {
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.85;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__menu {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+  }
+}
+
+
+/* movil */
+@media (max-width: 768px) {
+  .header {
+
+    &__nav {
+      position: absolute;
+      top: 45px;
+      right: 20px;
+      background-color: #25203a;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    &__nav.active {
+      display: flex;
+    }
+
+    &__menu {
+      display: block;
+    }
+  }
+}

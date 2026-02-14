@@ -1,25 +1,47 @@
-import "../../main.scss";
-import adalabLogo from "../../images/bg-adalab.png";
-import laptopLogo from "../../images/defaultAvatar.png"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Header.scss";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
-        <a className="header__brand" href="./" title="Haz click para volver a la página inicial">
-            <img 
-                className="header__companyLogo" 
-                src={laptopLogo}
-                alt="Logo proyectos molones"
-                />
-            <h1 className="header__title">Proyectos molones</h1>
-        </a>
-        <img 
-            className="logoSponsor" 
-            src={adalabLogo} 
-            alt="Logo Adalab"
-            />
+
+      <div 
+        className="header__logo"
+        onClick={() => navigate("/")}
+      >
+        Proyectos Molones
+      </div>
+
+      <nav className={`header__nav ${menuOpen ? "active" : ""}`}>
+        <span 
+          className="header__link"
+          onClick={() => navigate("/")}
+        >
+          Inicio
+        </span>
+
+        <span className="header__link">
+          Proyectos
+        </span>
+
+        <span className="header__link">
+          Contacto
+        </span>
+      </nav>
+
+      <div 
+        className="header__menu"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </div>
+
     </header>
   );
-}
+};
 
 export default Header;
