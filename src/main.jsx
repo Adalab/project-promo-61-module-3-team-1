@@ -1,4 +1,3 @@
-
 //Router
 import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";

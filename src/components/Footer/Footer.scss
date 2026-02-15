@@ -1,0 +1,23 @@
+.page__footer {
+  width: 100%;
+  padding: 25px 20px;
+  text-align: center;
+  background-color: #2f2a45;
+  color: white;
+  font-size: 14px;
+}
+
+.copy-footer {
+  opacity: 0.85;
+}
+
+.link__adalab {
+  color: white;
+  font-weight: 600;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.link__adalab:hover {
+  text-decoration: underline;
+}
