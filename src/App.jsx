@@ -1,7 +1,7 @@
 
 //import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import GetAvatar from './components/GetAvatar/GetAvatar';
 import Profile from './components/Profile/Profile';
