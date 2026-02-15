@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 
 import GetAvatar from './components/GetAvatar/GetAvatar';
 import Profile from './components/Profile/Profile';
@@ -41,32 +41,54 @@ function App() {
     saveInStorage(formData);
   }, [formData]);
 
+  const resetForm = () => {
+    const emptyData = {
+      name: "",
+      slogan: "",
+      repo: "",
+      demo: "",
+      technologies: "",
+      desc: "",
+      autor: "",
+      job: "",
+      image: "",
+      photo: "",
+    }
+    
+    setFormData(emptyData);
+    localStorage.removeItem("FormData");
+  };
+
+
   return (
       <Routes>
 
         {/* Landing */}
         <Route path="/" element={<Landing />} />
-        <Route 
-          path="/app" 
-          element={
-            <div>
+
+        {/* Formulario */}
+        <Route path="/form" element={
+
+        <>
               <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
               <Profile avatar={avatar} />
+
               <div className='container'>
                 <main className='main'>
-                  <Header></Header>
-                  <Hero></Hero>
+
+                  <Header/>
+                  <Hero/>
                   <Preview formData={formData}></Preview>
-                  <Form formData={formData} setFormData={setFormData}></Form>
-                  <Footer></Footer>
+                  <Form formData={formData} setFormData={setFormData} resetForm={resetForm}></Form>
+                  <Footer/>
                 </main>
               </div>
-            </div>
-          } 
-        />
+              </>
+            }
+            />
 
       </Routes>
-  
+
   );
 }
 

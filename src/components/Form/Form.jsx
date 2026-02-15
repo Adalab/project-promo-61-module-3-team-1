@@ -1,4 +1,4 @@
-const Form = ({ formData, setFormData }) => {
+const Form = ({ formData, setFormData, resetForm }) => {
 
 const handleInput = (ev) => {
     const inputName = ev.target.name;
@@ -51,6 +51,7 @@ const handleInput = (ev) => {
                 <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput} />
 
                 <button className="button--large">Guardar proyecto</button>
+                <button type="button" className="button button--large" on onClick={resetForm}>Reset</button>
             </fieldset>
             
         </form>

@@ -20,8 +20,7 @@ export default function Landing() {
         </p>
 
         <button
-          className="landing__button"
-          onClick={() => navigate("/form")}
+          className="landing__button" onClick={() => navigate("/form")}
         >
           NUEVO PROYECTO
         </button>
