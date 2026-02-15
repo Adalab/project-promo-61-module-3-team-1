@@ -15,6 +15,7 @@ import Preview from './components/Preview/Preview';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Landing from './pages/Landing';
+import CardPage from './pages/CardPage';
 
 
 
@@ -74,9 +75,13 @@ function App() {
               </div>
             } 
           />
-
+          {/* Página actual con formulario */}
+          <Route 
+            path="/cardPage" 
+            element={<CardPage formData={formData} setFormData={setFormData}/>} 
+          />
       </Routes>
-      <Link to="/"><Footer></Footer></Link>
+      <Footer></Footer>
     </div>
 
   );

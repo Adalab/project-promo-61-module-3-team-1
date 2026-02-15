@@ -1,6 +1,7 @@
 
 const sendDataToApi = (userData) => {
-    return fetch("https://apipw.dev.adalab.es/api/projectCard ", {
+    console.log('LLAMADA API');
+    return fetch("https://apipw.dev.adalab.es/api/projectCard", { //api no funciona
         method: "POST",
         headers: {
         "Content-Type": "application/json"

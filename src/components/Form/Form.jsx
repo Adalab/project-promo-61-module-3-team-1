@@ -1,21 +1,37 @@
+
+import { useNavigate } from "react-router-dom";
+
 const Form = ({ formData, setFormData }) => {
 
-const handleInput = (ev) => {
-    const inputName = ev.target.name;
-    const inputValue = ev.target.value;
+    const handleInput = (ev) => {
+        const inputName = ev.target.name;
+        const inputValue = ev.target.value;
 
-    setFormData({
-        ...formData,
-        [inputName]: inputValue
-    });
+        setFormData({
+            ...formData,
+            [inputName]: inputValue
+        });
 
-    console.log(formData)
-};
+        console.log(formData)
+    };
+
+    //NAVEGAR EN FUNCIONES (con importar)
+    const navigate = useNavigate();
+    // SUBMIT FORMULARIO
+   const handleSubmit = (ev) => {
+    
+        ev.preventDefault();
+        console.log("SUBMIT DONE")
+        navigate("/CardPage");
+        //sendDataToApi(formData) .then(res => { setCardURL(res.cardURL); console.log(res)});
+    };
+   
 
 
     return (
-        <form className="addForm">
+        <form className="addForm" onSubmit={handleSubmit}>
             <h2 className="title">Información</h2>
+
             <fieldset className="addForm__group">
                 <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
                 <input className="addForm__input" type="text" id="name" placeholder="Nombre del proyecto" name="name" value={formData.name} onChange={handleInput} />
@@ -50,7 +66,8 @@ const handleInput = (ev) => {
 
                 <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput} />
 
-                <button className="button--large" >Guardar proyecto</button>
+                <button className="button--large" type="submit">Guardar proyecto</button>
+                
             </fieldset>
             
         </form>

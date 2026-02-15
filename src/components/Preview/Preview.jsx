@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Preview = ({ formData }) => {
 
     return (
@@ -29,6 +31,7 @@ const Preview = ({ formData }) => {
               <a className="icon icon__github" href={formData.repo ? (formData.repo.startsWith("http") ? formData.repo : `https://${formData.repo}`) : "#"} title="Haz click para ver el código del proyecto">
                 GitHub link
               </a>
+              <Link to="/"className="button--link">Ver proyectos</Link>
             </div>
           </div>
         </article>
