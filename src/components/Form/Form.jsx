@@ -22,7 +22,7 @@ const Form = ({ formData, setFormData }) => {
     
         ev.preventDefault();
         console.log("SUBMIT DONE")
-        navigate("/CardPage");
+        navigate("/cardPage");
         //sendDataToApi(formData) .then(res => { setCardURL(res.cardURL); console.log(res)});
     };
    

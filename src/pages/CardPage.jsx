@@ -5,12 +5,13 @@ import { useState } from 'react';*/
 
 const CardPage = ({ formData}) => {
 
-    
+    console.log("CardPage renderiza")
 
   
 
 return (
     <div className='cardPage'>
+        <h1>HOLA</h1>
         <section className="preview">
             <div className="projectImage"></div>
             <article className="card">
