@@ -25,8 +25,15 @@ function App() {
     setAvatar(avatar);
   };
 
-    //Estado del formulario - cargar LocalStorage
-  
+  //Imagen proyecto
+  const updateProjectAvatar = (projectAvatar) => {
+    setFormData({
+      ...formData,
+      image: projectAvatar
+    });
+  };
+
+  //Estado del formulario - cargar LocalStorage
   const [formData, setFormData] = useState(
     loadFromStorage() || {
     name: "",
@@ -68,7 +75,7 @@ function App() {
                   <Header />
                   <Hero />
                    <Preview formData={formData}></Preview>
-                   <Form formData={formData} setFormData={setFormData}></Form>
+                   <Form formData={formData} setFormData={setFormData} updateProjectAvatar={updateProjectAvatar}></Form>
                   <Footer />
                 </main>
               </div>

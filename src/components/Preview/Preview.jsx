@@ -1,8 +1,15 @@
+import defaultProjectImage from "../../images/project-avatar.png";
+
 const Preview = ({ formData }) => {
 
     return (
          <section className="preview">
-        <div className="projectImage"></div>
+        
+        <div className="projectImage" 
+        style={{ backgroundImage: `url(${formData.image || defaultProjectImage})`
+        }}
+        ></div>
+
         <article className="card">
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 

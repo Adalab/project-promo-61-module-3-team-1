@@ -1,4 +1,6 @@
-const Form = ({ formData, setFormData }) => {
+import GetAvatar from "../GetAvatar/GetAvatar";
+
+const Form = ({ formData, setFormData, updateProjectAvatar }) => {
 
 const handleInput = (ev) => {
     const inputName = ev.target.name;
@@ -8,8 +10,6 @@ const handleInput = (ev) => {
         ...formData,
         [inputName]: inputValue
     });
-
-    console.log(formData)
 };
 
 
@@ -42,7 +42,12 @@ const handleInput = (ev) => {
             </fieldset>
         
             <fieldset className="addForm__group--upload">
-                <label htmlFor="image" className="button">Subir foto del proyecto</label>
+                    <GetAvatar
+                    avatar={formData.image}
+                    updateAvatar={updateProjectAvatar}
+                    text="Subir foto del proyecto"
+                    />
+                {/* <label htmlFor="image" className="button">Subir foto del proyecto</label> */}
 
                 <input className="addForm__hidden" type="file" id="image" name="image"  onChange={handleInput} />
 
