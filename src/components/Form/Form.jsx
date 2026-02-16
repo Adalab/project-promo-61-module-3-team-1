@@ -2,7 +2,8 @@ const Form = ({ formData, setFormData, resetForm }) => {
 
 const handleInput = (ev) => {
     const inputName = ev.target.name;
-    const inputValue = ev.target.value;
+
+const inputValue = ev.target.type === "file" ? URL.createObjectURL(ev.target.files[0]) : ev.target.value;
 
     setFormData({
         ...formData,
@@ -51,7 +52,7 @@ const handleInput = (ev) => {
                 <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput} />
 
                 <button className="button--large">Guardar proyecto</button>
-                <button type="button" className="button button--large" on onClick={resetForm}>Reset</button>
+                <button type="button" className="button button--large" onClick={resetForm}>Reset</button>
             </fieldset>
             
         </form>

@@ -71,14 +71,13 @@ function App() {
 
         <>
               <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
-              <Profile avatar={avatar} />
 
               <div className='container'>
                 <main className='main'>
 
                   <Header/>
                   <Hero/>
-                  <Preview formData={formData}></Preview>
+                  <Preview formData={formData} avatar={avatar}></Preview>
                   <Form formData={formData} setFormData={setFormData} resetForm={resetForm}></Form>
                   <Footer/>
                 </main>

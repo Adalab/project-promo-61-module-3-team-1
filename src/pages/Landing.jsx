@@ -3,6 +3,30 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import "./Landing.scss";
 
+      const projects = [
+        {
+          name:"Elegant Workspace",
+          author: "Maddie",
+          description:"Diseños exclusivos con tecnología moderna."
+        },
+         { 
+          name:"Elegant Workspace",
+          author: "Carmen",
+          description:"Diseños exclusivos con tecnología moderna."
+
+
+        },
+        { 
+          name:"Elegant Workspace",
+          author: "Yiyi",
+          description:"Diseños exclusivos con tecnología moderna."
+        },
+        {
+          name:"Elegant Workspace",
+          author: "Equipo 1",
+          description:"Diseños exclusivos con tecnología moderna."
+        }
+];
 export default function Landing() {
   const navigate = useNavigate();
 
@@ -26,48 +50,23 @@ export default function Landing() {
         </button>
       </div>
 
-      <div className="landing__grid">
+          <div className="landing__grid">
+            {projects.map((project,index)=> (
+              <div key={index} className="landing__card">
+              <h3 className="landing__card-title">
+                {project.name}
+                </h3>
+                <p className="landing__card-text">
+                  {project.description}
+                  </p>
 
-        <div className="landing__card">
-          <h3 className="landing__card-title">
-            Elegant Workspace
-          </h3>
-          <p className="landing__card-text">
-            Diseños exclusivos con tecnología moderna.
-          </p>
-        </div>
-
-        <div className="landing__card">
-          <h3 className="landing__card-title">
-            Elegant Workspace
-          </h3>
-          <p className="landing__card-text">
-            Diseños exclusivos con tecnología moderna.
-          </p>
-        </div>
-
-        <div className="landing__card">
-          <h3 className="landing__card-title">
-            Elegant Workspace
-          </h3>
-          <p className="landing__card-text">
-            Diseños exclusivos con tecnología moderna.
-          </p>
-        </div>
-
-        <div className="landing__card">
-          <h3 className="landing__card-title">
-            Elegant Workspace
-          </h3>
-          <p className="landing__card-text">
-            Diseños exclusivos con tecnología moderna.
-          </p>
-        </div>
-
-      </div>
-
-      <Footer />
-
-    </div>
-  );
+                  <span className="landing__card-author">
+                    {project.author}
+                    </span>
+                    </div>
+            ))}
+            </div>
+             <Footer />
+           </div>
+);
 }

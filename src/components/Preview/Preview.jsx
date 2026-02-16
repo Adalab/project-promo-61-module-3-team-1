@@ -1,4 +1,4 @@
-const Preview = ({ formData }) => {
+const Preview = ({ formData, avatar }) => {
 
     return (
          <section className="preview">
@@ -7,7 +7,12 @@ const Preview = ({ formData }) => {
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
           <div className="card__author">
-            <div className="card__authorPhoto"></div>
+            <div className="card__authorPhoto">
+             {formData.photo && (
+             <img src={formData.photo || avatar} alt="" />
+            )}
+
+             </div>
             <p className="card__job">
               {formData.job || "Full stack Developer"}
             </p>
