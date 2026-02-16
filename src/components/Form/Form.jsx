@@ -1,31 +1,28 @@
-
 import { useNavigate } from "react-router-dom";
 
 const Form = ({ formData, setFormData }) => {
 
+    
     const handleInput = (ev) => {
         const inputName = ev.target.name;
-        const inputValue = ev.target.value;
-
+        
         setFormData({
             ...formData,
-            [inputName]: inputValue
+            [inputName]: ev.target.type === "file"
+                ? ev.target.files[0]
+                : ev.target.value
         });
 
-        console.log(formData)
     };
-
-    //NAVEGAR EN FUNCIONES (con importar)
     const navigate = useNavigate();
     // SUBMIT FORMULARIO
-   const handleSubmit = (ev) => {
-    
-        ev.preventDefault();
-        console.log("SUBMIT DONE")
-        navigate("/CardPage");
-        //sendDataToApi(formData) .then(res => { setCardURL(res.cardURL); console.log(res)});
-    };
-   
+    const handleSubmit = (ev) => {
+        
+            ev.preventDefault();
+            
+                    
+            navigate("/cardPage");
+        };
 
 
     return (
@@ -64,7 +61,7 @@ const Form = ({ formData, setFormData }) => {
 
                 <label htmlFor="photo" className="button">Subir foto de la autora</label>
 
-                <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput} />
+                <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput}  />
 
                 <button className="button--large" type="submit">Guardar proyecto</button>
                 

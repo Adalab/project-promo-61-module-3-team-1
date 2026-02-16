@@ -1,15 +1,32 @@
 import { Link } from "react-router-dom";
+import defaultAvatar from "../../images/defaultAvatar.png";
 
 const Preview = ({ formData }) => {
 
     return (
          <section className="preview">
-        <div className="projectImage"></div>
+        <div className="projectImage">
+          <img 
+            src={
+              formData.image
+                ? formData.image
+                : defaultAvatar
+              }
+            alt="Avatar preview" />
+        </div>
         <article className="card">
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
           <div className="card__author">
-            <div className="card__authorPhoto"></div>
+            <div className="card__authorPhoto">
+              <img 
+                src={
+                  formData.photo
+                    ? formData.photo
+                    : defaultAvatar
+                  }
+                alt="Avatar preview" />
+            </div>
             <p className="card__job">
               {formData.job || "Full stack Developer"}
             </p>

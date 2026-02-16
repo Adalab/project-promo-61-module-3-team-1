@@ -75,10 +75,10 @@ function App() {
               </div>
             } 
           />
-          {/* Página actual con formulario */}
+          {/* Página cardUrl */}
           <Route 
             path="/cardPage" 
-            element={<CardPage formData={formData} setFormData={setFormData}/>} 
+            element={<CardPage formData={formData} />}  
           />
       </Routes>
       <Footer></Footer>
