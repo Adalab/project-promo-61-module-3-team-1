@@ -1,12 +1,12 @@
 
-import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import React from 'react';
+import { useState, useEffect } from 'react';
+import { Routes, Route } from "react-router-dom";
+
 import GetAvatar from './components/GetAvatar/GetAvatar';
 import Profile from './components/Profile/Profile';
 import './main.scss';
 import { saveInStorage, loadFromStorage } from "./services/LocalStorage";
-
 
 //componentes
 import Form from './components/Form/Form';
@@ -15,8 +15,9 @@ import Preview from './components/Preview/Preview';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Landing from './pages/Landing';
+import CardPage from './pages/CardPage';
 
-import './main.scss';
+
 
 function App() {
   const [avatar, setAvatar] = useState('');
@@ -54,40 +55,44 @@ function App() {
   }, [formData]);
 
   return (
-
+    <div>
       <Routes>
 
-        {/* Landing */}
-        <Route 
-          path="/" 
-          element={<Landing />} 
-        />
+          {/* Landing Page*/}
+          <Route 
+            path="/" 
+            element={<Landing />} 
+          />
 
-        {/* Página actual con formulario */}
-        <Route 
-          path="/form" 
-          element={
-            <div>
-              <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
-              <Profile avatar={avatar} />
-              <div className='container'>
-                <main className='main'>
-                  <Header />
-                  <Hero />
-                   <Preview formData={formData}></Preview>
-                   <Form formData={formData} setFormData={setFormData} updateProjectAvatar={updateProjectAvatar}></Form>
-                  <Footer />
-                </main>
+          {/* Página actual con formulario */}
+          <Route 
+            path="/form" 
+            element={
+              <div>
+                <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
+                <Profile avatar={avatar} />
+                <div className='container'>
+                  <main className='main'>
+                    <Header />
+                    <Hero />
+                    <Preview formData={formData}></Preview>
+                    <Form formData={formData} setFormData={setFormData} updateProjectAvatar={updateProjectAvatar}></Form>
+                  </main>
+                </div>
               </div>
-            </div>
-          } 
-        />
-
+            } 
+          />
+          {/* Página cardUrl */}
+          <Route 
+            path="/cardPage" 
+            element={<CardPage formData={formData} />}  
+          />
       </Routes>
-   
+      <Footer></Footer>
+    </div>
 
-        )
-      }
+  );
+}
 
 
 

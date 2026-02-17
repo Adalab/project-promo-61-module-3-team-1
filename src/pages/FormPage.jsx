@@ -24,7 +24,7 @@ export default function FormPage() {
           <Hero />
           <Preview />
           <Form />
-          <Footer />
+          
         </main>
       </div>
     </div>
