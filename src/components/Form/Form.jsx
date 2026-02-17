@@ -1,22 +1,34 @@
+import { useNavigate } from "react-router-dom";
+
 const Form = ({ formData, setFormData, resetForm }) => {
 
-const handleInput = (ev) => {
-    const inputName = ev.target.name;
+    
+    const handleInput = (ev) => {
+        const inputName = ev.target.name;
+        
+        setFormData({
+            ...formData,
+            [inputName]: ev.target.type === "file"
+                ? ev.target.files[0]
+                : ev.target.value
+        });
 
-const inputValue = ev.target.type === "file" ? URL.createObjectURL(ev.target.files[0]) : ev.target.value;
-
-    setFormData({
-        ...formData,
-        [inputName]: inputValue
-    });
-
-    console.log(formData)
-};
+    };
+    const navigate = useNavigate();
+    // SUBMIT FORMULARIO
+    const handleSubmit = (ev) => {
+        
+            ev.preventDefault();
+            
+                    
+            navigate("/cardPage");
+        };
 
 
     return (
-        <form className="addForm">
+        <form className="addForm" onSubmit={handleSubmit}>
             <h2 className="title">Información</h2>
+
             <fieldset className="addForm__group">
                 <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
                 <input className="addForm__input" type="text" id="name" placeholder="Nombre del proyecto" name="name" value={formData.name} onChange={handleInput} />
@@ -49,7 +61,7 @@ const inputValue = ev.target.type === "file" ? URL.createObjectURL(ev.target.fil
 
                 <label htmlFor="photo" className="button">Subir foto de la autora</label>
 
-                <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput} />
+                <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput}  />
 
                 <button className="button--large">Guardar proyecto</button>
                 <button type="button" className="button button--large" onClick={resetForm}>Reset</button>

@@ -1,8 +1,20 @@
+
+import { Link } from "react-router-dom";
+import defaultAvatar from "../../images/defaultAvatar.png";
+
 const Preview = ({ formData, avatar }) => {
 
     return (
          <section className="preview">
-        <div className="projectImage"></div>
+        <div className="projectImage">
+          <img 
+            src={
+              formData.image
+                ? formData.image
+                : defaultAvatar
+              }
+            alt="Avatar preview" />
+        </div>
         <article className="card">
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
@@ -34,6 +46,7 @@ const Preview = ({ formData, avatar }) => {
               <a className="icon icon__github" href={formData.repo ? (formData.repo.startsWith("http") ? formData.repo : `https://${formData.repo}`) : "#"} title="Haz click para ver el código del proyecto">
                 GitHub link
               </a>
+              <Link to="/"className="button--link">Ver proyectos</Link>
             </div>
           </div>
         </article>
