@@ -11,16 +11,7 @@ const Preview = ({ formData }) => {
         style={{ backgroundImage: `url(${formData.image || defaultProjectImage})`
         }}
         ></div>
-
-        <div className="projectImage">
-          <img 
-            src={
-              formData.image
-                ? formData.image
-                : defaultAvatar
-              }
-            alt="Avatar preview" />
-        </div>
+        
         <article className="card">
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
