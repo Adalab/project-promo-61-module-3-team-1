@@ -8,7 +8,6 @@ import Profile from './components/Profile/Profile';
 import './main.scss';
 import { saveInStorage, loadFromStorage } from "./services/LocalStorage";
 
-//componentes
 import Form from './components/Form/Form';
 import Hero from './components/Hero/Hero';
 import Preview from './components/Preview/Preview';
@@ -37,63 +36,87 @@ function App() {
   //Estado del formulario - cargar LocalStorage
   const [formData, setFormData] = useState(
     loadFromStorage() || {
-    name: "",
-    slogan: "",
-    repo: "",
-    demo: "",
-    technologies: "",
-    desc: "",
-    autor: "",
-    job: "",
-    image: "",
-    photo: "",
-  });
+      name: "",
+      slogan: "",
+      repo: "",
+      demo: "",
+      technologies: "",
+      desc: "",
+      autor: "",
+      job: "",
+      image: "",
+      photo: "",
+    }
+  );
 
-  //Guardar en LocalStorage
-  useEffect (() => {
-    saveInStorage(formData)
+  useEffect(() => {
+    saveInStorage(formData);
   }, [formData]);
 
-  return (
-    <div>
-      <Routes>
+  const resetForm = () => {
+    const emptyData = {
+      name: "",
+      slogan: "",
+      repo: "",
+      demo: "",
+      technologies: "",
+      desc: "",
+      autor: "",
+      job: "",
+      image: "",
+      photo: "",
+    }
+    
+    setFormData(emptyData);
+    localStorage.removeItem("FormData");
+  };
 
-          {/* Landing Page*/}
-          <Route 
-            path="/" 
-            element={<Landing />} 
-          />
 
-          {/* Página actual con formulario */}
-          <Route 
-            path="/form" 
-            element={
-              <div>
-                <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
-                <Profile avatar={avatar} />
-                <div className='container'>
-                  <main className='main'>
-                    <Header />
-                    <Hero />
-                    <Preview formData={formData}></Preview>
-                    <Form formData={formData} setFormData={setFormData} updateProjectAvatar={updateProjectAvatar}></Form>
-                  </main>
-                </div>
-              </div>
-            } 
-          />
-          {/* Página cardUrl */}
-          <Route 
-            path="/cardPage" 
-            element={<CardPage formData={formData} />}  
-          />
-      </Routes>
-      <Footer></Footer>
-    </div>
+ return (
+  <div>
+    <Routes>
 
-  );
+      {/* Landing Page*/}
+      <Route
+        path="/"
+        element={<Landing />}
+      />
+
+      {/* Página actual con formulario */}
+      <Route
+        path="/form"
+        element={
+          <div>
+            <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
+            <Profile avatar={avatar} />
+            <div className='container'>
+              <main className='main'>
+                <Header />
+                <Hero />
+                <Preview formData={formData} avatar={avatar} />
+                <Form
+                  formData={formData}
+                  setFormData={setFormData}
+                  resetForm={resetForm}
+                  updateProjectAvatar={updateProjectAvatar}
+                />
+              </main>
+            </div>
+          </div>
+        }
+      />
+
+      {/* Página cardUrl */}
+      <Route
+        path="/cardPage"
+        element={<CardPage formData={formData} />}
+      />
+
+    </Routes>
+    <Footer />
+  </div>
+);
+
 }
-
-
 
 export default App;

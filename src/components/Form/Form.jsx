@@ -1,7 +1,7 @@
 import GetAvatar from "../GetAvatar/GetAvatar";
 import { useNavigate } from "react-router-dom";
 
-const Form = ({ formData, setFormData, updateProjectAvatar }) => {
+const Form = ({ formData, setFormData, updateProjectAvatar, resetForm }) => {
 
     
     const handleInput = (ev) => {
@@ -69,8 +69,8 @@ const Form = ({ formData, setFormData, updateProjectAvatar }) => {
 
                 <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput}  />
 
-                <button className="button--large" type="submit">Guardar proyecto</button>
-                
+                <button className="button--large">Guardar proyecto</button>
+                <button type="button" className="button button--large" onClick={resetForm}>Reset</button>
             </fieldset>
             
         </form>

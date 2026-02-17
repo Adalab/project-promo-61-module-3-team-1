@@ -1,8 +1,8 @@
+
 import { Link } from "react-router-dom";
-import defaultAvatar from "../../images/defaultAvatar.png";
 import defaultProjectImage from "../../images/project-avatar.png";
 
-const Preview = ({ formData }) => {
+const Preview = ({ formData, avatar }) => {
 
     return (
          <section className="preview">
@@ -17,14 +17,11 @@ const Preview = ({ formData }) => {
 
           <div className="card__author">
             <div className="card__authorPhoto">
-              <img 
-                src={
-                  formData.photo
-                    ? formData.photo
-                    : defaultAvatar
-                  }
-                alt="Avatar preview" />
-            </div>
+             {formData.photo && (
+             <img src={formData.photo || avatar} alt="" />
+            )}
+
+             </div>
             <p className="card__job">
               {formData.job || "Full stack Developer"}
             </p>

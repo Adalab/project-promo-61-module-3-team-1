@@ -202,10 +202,14 @@ fieldset {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  background-image: url('../images/avatar.webp');
-  background-position: center;
-  background-size: cover;
-  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+.card__authorPhoto img {
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card .card__job {
