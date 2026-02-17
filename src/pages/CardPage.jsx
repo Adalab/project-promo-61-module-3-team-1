@@ -15,24 +15,34 @@ const CardPage =  ({ formData}) => {
             setUrl(returnedUrl);
             };
             createCard();
-        }, []);
+        }, [formData]);
 
 
     
     return (
-    <section>
-      
-        {url && (
-        <iframe
+   <section>
+    <h2>Tu tarjeta creada:</h2>
+
+        {url ? (
+        <>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+            Abrir tarjeta en nueva pestaña
+            </a>
+
+            <iframe
             src={url}
-            title="Tarjeta"
+            title="Tarjeta creada"
             width="100%"
             height="600"
-        />
+            style={{ border: "none", marginTop: "20px" }}
+            />
+        </>
+        ) : (
+        <p>Creando tarjeta...</p>
         )}
-     
     </section>
-  );
+    );
+  
     
 
 }
