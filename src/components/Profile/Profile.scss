@@ -1,6 +1,7 @@
+@import '../../styles/tokens';
 
 .profile__avatar {
-  border: 1px solid #ccc;
+  border: 1px solid $border-subtle;
   width: 60px;
   height: 60px;
   background-position: center;

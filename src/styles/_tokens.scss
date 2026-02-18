@@ -1,0 +1,40 @@
+
+/* Colores */
+
+$bg-main: #F5F5F4;
+$bg-surface: #FFFFFF;
+
+$text-primary: #111827;
+$text-secondary: #6B7280;
+
+$accent: #A78BFA;        // lila claro
+$accent-hover: #8B5CF6;  // lila hover
+
+$accent-soft: rgba(167, 139, 250, 0.15);
+
+$border-subtle: #E5E7EB;
+
+$text-primary: #111827;
+$text-secondary: #6B7280;
+
+$text-light: #FFFFFF;
+$text-light-soft: rgba(255,255,255,0.85);
+
+
+/* Sombras */
+
+$shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+/* Tipografía */
+
+$font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+$font-title-xl: 700 3rem $font-family-base;
+$font-title-lg: 700 2rem $font-family-base;
+$font-title-md: 600 1.5rem $font-family-base;
+
+$font-text-lg: 400 1.1rem $font-family-base;
+$font-text: 400 1rem $font-family-base;
+$font-small: 400 0.875rem $font-family-base;
+
+$font-button: 600 0.95rem $font-family-base;

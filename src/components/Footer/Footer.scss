@@ -1,23 +1,29 @@
+@use '../../styles/tokens' as *;
+
+
 .page__footer {
   width: 100%;
   padding: 25px 20px;
   text-align: center;
-  background-color: #2f2a45;
-  color: white;
+  background-color: $bg-surface;
+  border-top: 1px solid $border-subtle;
+  color: $text-secondary;
   font-size: 14px;
 }
 
 .copy-footer {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .link__adalab {
-  color: white;
+  color: $accent;
   font-weight: 600;
   margin-left: 5px;
   text-decoration: none;
+  transition: 0.2s ease;
 }
 
 .link__adalab:hover {
+  color: $accent-hover;
   text-decoration: underline;
 }

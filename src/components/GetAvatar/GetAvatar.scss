@@ -1,21 +1,32 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
 .get-avatar {
   display: flex;
-  margin: 30px 0;
+  justify-content: center;
+  margin: 7px 0;
 }
 
 .get-avatar__label {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  box-sizing: border-box;
-  background: deeppink;
-  border-radius: 15px;
-  border: 0;
-  font-family: sans-serif;
-  font-size: 20px;
-  padding: 10px 20px;
+  justify-content: center;
+  width: 180px;
+  padding: 10px 22px;
+  border-radius: 40px;
+
+  background-image: linear-gradient(135deg, #A78BFA, #8B5CF6);
   color: #fff;
+  font: var(--font-button);
+
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.get-avatar__label:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
 }
 
 .get-avatar__upload-field {
@@ -24,12 +35,4 @@
 
 .get-avatar__preview {
   display: none;
-  // background-color: #fff;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // border: 1px solid #ccc;
-  // height: 50px;
-  // margin-left: 15px;
-  // width: 50px;
 }

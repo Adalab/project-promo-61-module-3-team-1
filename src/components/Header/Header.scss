@@ -1,14 +1,17 @@
+@import '../../styles/_tokens';
+
+
 .header {
   width: 100%;
-   
-  background-color: #25203a; 
+  background-color: #25203a;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 2rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+
+  color: $text-light;
 
   position: sticky;
   top: 0;
@@ -18,6 +21,7 @@
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
+    color: $text-light;
   }
 
   &__nav {
@@ -28,11 +32,11 @@
   &__link {
     cursor: pointer;
     font-size: 14px;
-    opacity: 0.85;
-    transition: all 0.2s ease;
+    color: $text-light-soft;
+    transition: 0.2s ease;
 
     &:hover {
-      opacity: 1;
+      color: $text-light;
     }
   }
 
@@ -40,11 +44,11 @@
     display: none;
     font-size: 22px;
     cursor: pointer;
+    color: $text-light;
   }
 }
 
-
-/* movil */
+/* móvil */
 @media (max-width: 768px) {
   .header {
 

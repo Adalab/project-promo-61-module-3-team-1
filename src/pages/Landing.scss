@@ -1,8 +1,11 @@
+@use '../styles/tokens' as *;
+@use '../styles/mixins' as *;
+
 .landing {
   min-height: 100vh;
-  background-color: #2f2a45;
+  background-color: $bg-main;
   padding: 60px 40px;
-  color: white;
+  color: $text-primary;
   text-align: center;
 
   display: flex;
@@ -13,36 +16,31 @@
   }
 
   &__title {
-    font-size: 42px;
-    font-weight: 700;
+    font: $font-title-xl;
     margin-bottom: 10px;
   }
 
   &__subtitle {
-    font-size: 18px;
-    opacity: 0.8;
+    font: $font-text-lg;
+    color: $text-secondary;
     margin-bottom: 25px;
   }
 
   &__button {
-    background-color: white;
-    color: #2f2a45;
-    border: none;
+    @include button-primary;
     padding: 12px 28px;
     border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      @include button-primary-hover;
+      transform: translateY(-2px);
+      box-shadow: $shadow-soft;
     }
   }
 
   &__grid {
     margin-top: 20px;
-    margin-bottom: auto; // empuja el footer abajo
+    margin-bottom: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -52,12 +50,11 @@
   }
 
   &__card {
-    background-color: #f3f3f3;
-    color: #333;
-    border-radius: 20px;
+    @include card;
     padding: 30px;
     text-align: left;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #E5E7EB;
+    
   }
 
   &__card-image {
@@ -68,18 +65,17 @@
   }
 
   &__card-title {
-    font-size: 20px;
-    font-weight: 600;
+    font: $font-title-md;
     margin-bottom: 10px;
+    color: $text-primary;
   }
 
   &__card-text {
-    font-size: 14px;
+    font: $font-small;
+    color: $text-secondary;
     line-height: 1.5;
-    opacity: 0.8;
   }
 }
-
 
 /* tablet */
 @media (max-width: 1024px) {
@@ -94,8 +90,7 @@
   }
 }
 
-
-/* movil */
+/* móvil */
 @media (max-width: 768px) {
   .landing {
     padding: 40px 20px;
@@ -118,5 +113,3 @@
     }
   }
 }
-
-
