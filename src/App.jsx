@@ -74,6 +74,7 @@ function App() {
 
  return (
   <div>
+    <Header />
     <Routes>
 
       {/* Landing Page*/}
