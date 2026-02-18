@@ -88,12 +88,12 @@ function App() {
         path="/form"
         element={
           <div>
+            
             <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
             <Profile avatar={avatar} />
             <div className='container'>
               <main className='main'>
-                <Header />
-                <Hero />
+              
                 <Preview formData={formData} avatar={avatar} />
                 <Form
                   formData={formData}

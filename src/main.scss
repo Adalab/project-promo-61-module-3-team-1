@@ -71,6 +71,7 @@ fieldset {
 .header {
   display: flex;
   justify-content: space-between;
+ 
   
 }
 
@@ -400,10 +401,10 @@ fieldset {
 }
 
 .button--large {
-  display: block;
+  
   width: 145px;
 
-  margin-inline: auto;
+  
   margin-block: 8px;
   padding: 5px 18px;
   color: var(--color-white);
@@ -434,13 +435,7 @@ fieldset {
   box-shadow: 0 0 5px 0 var(--color-greyish-brown-two);
 }
 
-.icon__www {
-  background-image: url('../images/icons/globe-solid.svg');
-}
 
-.icon__github {
-  background-image: url('../images/icons/github.svg');
-}
 
 
 .black {

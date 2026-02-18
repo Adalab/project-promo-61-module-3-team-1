@@ -1,7 +1,10 @@
 import sendDataToApi from '../services/Api';
 import { useState, useEffect } from 'react';
+import './cardPage.scss';
 
-
+import ShareLinkedIn from '../components/ShareButtons/ShareLinkedIn';
+import ShareWhatsApp from '../components/ShareButtons/ShareWhatsApp';
+import ShareTwitter from '../components/ShareButtons/ShareTwitter';
 
 const CardPage =  ({ formData}) => {
     
@@ -21,25 +24,48 @@ const CardPage =  ({ formData}) => {
     
     return (
    <section>
-    <h2>Tu tarjeta creada:</h2>
 
-        {url ? (
-        <>
-            <a href={url} target="_blank" rel="noopener noreferrer">
-            Abrir tarjeta en nueva pestaña
-            </a>
+        {url 
+            ? (
+                <>
+                    <iframe className='iframe'
+                    src={url}
+                    title="Tarjeta creada"
+                    width="100%"
+                    height="00"
+                    style={{ border: "none", marginTop: "20px" }}
+                    />
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                    Abrir tarjeta en nueva pestaña
+                    </a>
 
-            <iframe
-            src={url}
-            title="Tarjeta creada"
-            width="100%"
-            height="600"
-            style={{ border: "none", marginTop: "20px" }}
-            />
-        </>
-        ) : (
-        <p>Creando tarjeta...</p>
-        )}
+                </>)
+
+            : (
+                <p>Creando tarjeta...</p>
+                )
+        }
+
+        <div className='shareButtons'>
+            <button
+                className="button--large"
+                >
+                <ShareLinkedIn />
+            </button>
+            
+            <button
+                className="button--large"
+                >
+                <ShareWhatsApp />
+            </button>
+
+            <button
+                className="button--large"
+                >
+                <ShareTwitter />
+            </button>
+
+        </div>
     </section>
     );
   

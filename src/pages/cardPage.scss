@@ -1,0 +1,29 @@
+
+
+.iframe {
+    
+  margin: 0;
+}
+
+.shareButtons {
+
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  a {
+  color: rgb(71, 17, 122);
+  font-weight: 600;
+}
+}
+
+.button__icon {
+  font-size: 20px;
+}
+
+.butShare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
