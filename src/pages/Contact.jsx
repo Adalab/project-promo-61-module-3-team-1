@@ -36,6 +36,7 @@ const Contact = () => {
     ];
     return (
         <div className="pageContact">
+            <p className="textConocenos">Sobre nosotras</p>
             <div className="landing__grid">
             {projects.map((project, index) => (
             <div key={index} className="landing__card">
@@ -53,6 +54,7 @@ const Contact = () => {
                 {project.author}
                 </span>
             </div>
+            
             ))}
         </div>
       </div>

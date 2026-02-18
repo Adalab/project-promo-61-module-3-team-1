@@ -27,9 +27,8 @@ const Header = () => {
           Inicio
         </span>
 
-        <span className="header__link">
-          Proyectos
-        </span>
+        
+        <Link to="/Projects"className="header__link">Proyectos</Link>
 
        
         <Link to="/Contact"className="header__link">Contacto</Link>

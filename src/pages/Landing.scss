@@ -121,12 +121,12 @@
 
 .imgChicas {
 
-  width: 250px;
+  width: 350px;
   
 }
 .imgCar {
 
-  width: 300px;
+  width: 400px;
   
 }
 
@@ -146,4 +146,10 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+}
+
+.textConocenos {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
 }
