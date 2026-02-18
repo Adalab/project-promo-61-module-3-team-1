@@ -1,7 +1,7 @@
 import GetAvatar from "../GetAvatar/GetAvatar";
 import { useNavigate } from "react-router-dom";
 
-const Form = ({ formData, setFormData, updateProjectAvatar, resetForm }) => {
+const Form = ({ formData, setFormData, updateAuthorAvatar, updateProjectAvatar, resetForm }) => {
 
     
     const handleInput = (ev) => {
@@ -33,7 +33,7 @@ const Form = ({ formData, setFormData, updateProjectAvatar, resetForm }) => {
                 <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
                 <input className="addForm__input" type="text" id="name" placeholder="Nombre del proyecto" required name="name" value={formData.name} onChange={handleInput} />
 
-                <input className="addForm__input" type="text" id="slogan" placeholder="Slogan" name="slogan" value={formData.slogan} onChange={handleInput} />
+                <input className="addForm__input" type="text" id="slogan" placeholder="Eslogan" name="slogan" value={formData.slogan} onChange={handleInput} />
 
                 <div className="addForm__2col">
                     <input className="addForm__input" type="url" id="repo" placeholder="Link al repositorio" name="repo" value={formData.repo} onChange={handleInput} />
@@ -55,18 +55,24 @@ const Form = ({ formData, setFormData, updateProjectAvatar, resetForm }) => {
             </fieldset>
         
             <fieldset className="addForm__group--upload">
-                    <GetAvatar
-                    avatar={formData.image}
-                    updateAvatar={updateProjectAvatar}
-                    text="Subir foto del proyecto"
-                    />
+                <GetAvatar
+                avatar={formData.image}
+                updateAvatar={updateProjectAvatar}
+                text="Subir foto del proyecto"
+                />
                 {/* <label htmlFor="image" className="button">Subir foto del proyecto</label> */}
 
-                <input className="addForm__hidden" type="file" id="image" name="image"  onChange={handleInput} />
+                {/* <input className="addForm__hidden" type="file" id="image" name="image"  onChange={handleInput} /> */}
 
-                <label htmlFor="photo" className="button">Subir foto de la autora</label>
+                <GetAvatar
+                avatar={formData.photo}
+                updateAvatar={updateAuthorAvatar}
+                text="Subir foto de la autora"
+                />
 
-                <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput}  />
+                {/* <label htmlFor="photo" className="button">Subir foto de la autora</label>
+
+                <input className="addForm__hidden" type="file" id="photo" name="photo"  onChange={handleInput}  /> */}
 
                 <button className="button--large">Guardar proyecto</button>
                 <button type="button" className="button button--large" onClick={resetForm}>Reset</button>

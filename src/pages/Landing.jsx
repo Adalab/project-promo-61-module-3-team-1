@@ -2,27 +2,35 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import "./Landing.scss";
+import yiyi from "../images/yiyi-avatar.png";
+import carmen from "../images/carmen-avatar.png";
+import maddie from "../images/maddie-avatar.png";
+import together from "../images/together-avatar.png";
 
 const projects = [
   {
-    name: "Elegant Workspace",
+    name: "Visionary Corner",
     author: "Maddie",
-    description: "Diseños exclusivos con tecnología moderna."
+    description: "Diseños exclusivos con tecnología moderna.",
+    image: maddie
   },
   {
-    name: "Elegant Workspace",
+    name: "Urban Tech Lab",
     author: "Carmen",
-    description: "Diseños exclusivos con tecnología moderna."
+    description: "Soluciones elegantes pensadas para inspirar.",
+    image: carmen
   },
   {
-    name: "Elegant Workspace",
+    name: "Future Design Hub",
     author: "Yiyi",
-    description: "Diseños exclusivos con tecnología moderna."
+    description: "Creatividad y funcionalidad unidas en cada detalle.",
+    image: yiyi
   },
   {
     name: "Elegant Workspace",
     author: "Equipo 1",
-    description: "Diseños exclusivos con tecnología moderna."
+    description: "Innovación visual diseñada para el día a día.",
+    image: together
   }
 ];
 
@@ -51,6 +59,8 @@ export default function Landing() {
       <div className="landing__grid">
         {projects.map((project, index) => (
           <div key={index} className="landing__card">
+            <img src={project.image} alt={project.name} className="landing__card-image" />
+
             <h3 className="landing__card-title">
               {project.name}
             </h3>

@@ -19,11 +19,11 @@ import CardPage from './pages/CardPage';
 
 
 function App() {
-  const [avatar, setAvatar] = useState('');
+  // const [avatar, setAvatar] = useState('');
 
-  const updateAvatar = (avatar) => {
-    setAvatar(avatar);
-  };
+  // const updateAvatar = (avatar) => {
+  //   setAvatar(avatar);
+  // };
 
   //Imagen proyecto
   const updateProjectAvatar = (projectAvatar) => {
@@ -32,6 +32,14 @@ function App() {
       image: projectAvatar
     });
   };
+
+  //Avatar autora
+  const updateAuthorAvatar = (authorImage) => {
+  setFormData({
+    ...formData,
+    photo: authorImage
+  });
+};
 
   //Estado del formulario - cargar LocalStorage
   const [formData, setFormData] = useState(
@@ -68,7 +76,7 @@ function App() {
     }
     
     setFormData(emptyData);
-    localStorage.removeItem("FormData");
+    localStorage.removeItem("formData");
   };
 
 
@@ -88,17 +96,18 @@ function App() {
         path="/form"
         element={
           <div>
-            
-            <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
-            <Profile avatar={avatar} />
+            {/* <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
+            <Profile avatar={avatar} /> */}
             <div className='container'>
               <main className='main'>
-              
-                <Preview formData={formData} avatar={avatar} />
+                <Header />
+                <Hero />
+                <Preview formData={formData} />
                 <Form
                   formData={formData}
                   setFormData={setFormData}
                   resetForm={resetForm}
+                  updateAuthorAvatar={updateAuthorAvatar}
                   updateProjectAvatar={updateProjectAvatar}
                 />
               </main>
