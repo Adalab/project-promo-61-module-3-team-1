@@ -11,6 +11,8 @@ const sendDataToApi = async (userData) => {
                 throw new Error ("Error en la petición")
             }
             const data = await respuesta.json();
+            console.log("RESPUESTA COMPLETA API:", data);
+            
             const url = data.cardURL;            
             console.log(url);
             return url; //para usarla fuera

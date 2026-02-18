@@ -1,8 +1,9 @@
 
 import { Link } from "react-router-dom";
 import defaultProjectImage from "../../images/project-avatar.png";
+import defaultAvatar from "../../images/default-avatar.png";
 
-const Preview = ({ formData, avatar }) => {
+const Preview = ({ formData }) => {
 
     return (
          <section className="preview">
@@ -13,14 +14,14 @@ const Preview = ({ formData, avatar }) => {
         ></div>
         
         <article className="card">
-          <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
+          <h2 className="card__projectTitle"><span className="card__projectTitle--text">Tarjeta de proyecto personal</span></h2>
 
           <div className="card__author">
             <div className="card__authorPhoto">
-             {formData.photo && (
-             <img src={formData.photo || avatar} alt="" />
-            )}
-
+              <img
+                src={formData.photo || defaultAvatar}
+                alt="Foto autora"
+              />
              </div>
             <p className="card__job">
               {formData.job || "Full stack Developer"}
@@ -31,7 +32,7 @@ const Preview = ({ formData, avatar }) => {
           <div className="card__project">            
             <h3 className="card__name">{formData.name || "Elegant Workspace"}</h3>
             <p className="card__slogan">{formData.slogan || "Diseños Exclusivos"}</p>
-            <h3 className="card__descriptionTitle">Product description</h3>
+            <h3 className="card__descriptionTitle">Descripción del producto</h3>
             <p className="card__description">{formData.desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
 
             <div className="card__technicalInfo">
