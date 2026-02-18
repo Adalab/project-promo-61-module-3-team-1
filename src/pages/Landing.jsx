@@ -2,37 +2,15 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import "./Landing.scss";
-import yiyi from "../images/yiyi-avatar.png";
-import carmen from "../images/carmen-avatar.png";
-import maddie from "../images/maddie-avatar.png";
-import together from "../images/together-avatar.png";
 
-const projects = [
-  {
-    name: "Visionary Corner",
-    author: "Maddie",
-    description: "Diseños exclusivos con tecnología moderna.",
-    image: maddie
-  },
-  {
-    name: "Urban Tech Lab",
-    author: "Carmen",
-    description: "Soluciones elegantes pensadas para inspirar.",
-    image: carmen
-  },
-  {
-    name: "Future Design Hub",
-    author: "Yiyi",
-    description: "Creatividad y funcionalidad unidas en cada detalle.",
-    image: yiyi
-  },
-  {
-    name: "Elegant Workspace",
-    author: "Equipo 1",
-    description: "Innovación visual diseñada para el día a día.",
-    image: together
-  }
-];
+import imgYiyi from "../images/imageYiyi.png";
+import imgMaddie from "../images/imageMaddie.png";
+import imgCarmen from "../images/imageCarmen.png";
+
+import { FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -55,29 +33,23 @@ export default function Landing() {
           CREATE NEW PROJECT
         </button>
       </div>
-
-      <div className="landing__grid">
-        {projects.map((project, index) => (
-          <div key={index} className="landing__card">
-            <img src={project.image} alt={project.name} className="landing__card-image" />
-
-            <h3 className="landing__card-title">
-              {project.name}
-            </h3>
-
-            <p className="landing__card-text">
-              {project.description}
-            </p>
-
-            <span className="landing__card-author">
-              {project.author}
-            </span>
-          </div>
-        ))}
+      <p>Some Examples</p>
+      <div className="containerimgChicas">
+        <img src={imgMaddie} alt="Maddie" className="imgChicas"/>
+        <img src={imgYiyi} alt="Yiyi" className="imgChicas"/>
+        <img src={imgCarmen} alt="Carmen" className="imgCar"/>
       </div>
       <div>
         <h2>Share it on social media</h2>
+        <div className="icons">
+          <FaWhatsapp className="button__icon" />
+          <FaLinkedin className="button__icon" />
+          <FaXTwitter className="button__icon" /> 
+        </div>
       </div>
+      
+      
+      
 
       
     </div>

@@ -1,9 +1,8 @@
 import { FaWhatsapp } from "react-icons/fa";
 
-const ShareWhatsApp = () => {
-    const whatsAppUrl = encodeURIComponent("https://tusitio.com");
-    const message = "Mira este contenido:";
-    const text = encodeURIComponent(`${message} ${whatsAppUrl}`);
+const ShareWhatsApp =  ({ url, title }) => {
+    const text = encodeURIComponent(`${title} ${url}`);
+    
 
     return (
         <a

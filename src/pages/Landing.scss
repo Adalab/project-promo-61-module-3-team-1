@@ -119,4 +119,31 @@
   }
 }
 
+.imgChicas {
 
+  width: 250px;
+  
+}
+.imgCar {
+
+  width: 300px;
+  
+}
+
+
+.containerimgChicas {
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+
+.icons {
+  margin: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
