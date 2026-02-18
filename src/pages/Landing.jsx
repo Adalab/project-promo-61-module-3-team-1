@@ -31,7 +31,7 @@ export default function Landing() {
 
   return (
     <div className="landing">
-      <Header />
+      
 
       <div className="landing__header">
         <h1 className="landing__title">Proyectos Molones</h1>
@@ -66,7 +66,7 @@ export default function Landing() {
         ))}
       </div>
 
-      <Footer />
+      
     </div>
   );
 }
