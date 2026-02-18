@@ -100,8 +100,6 @@ function App() {
             <Profile avatar={avatar} /> */}
             <div className='container'>
               <main className='main'>
-                <Header />
-                <Hero />
                 <Preview formData={formData} />
                 <Form
                   formData={formData}

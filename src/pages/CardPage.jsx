@@ -25,27 +25,23 @@ const CardPage =  ({ formData}) => {
     return (
    <section>
 
-        {url 
-            ? (
-                <>
-                    <iframe className='iframe'
-                    src={url}
-                    title="Tarjeta creada"
-                    width="100%"
-                    height="00"
-                    style={{ border: "none", marginTop: "20px" }}
-                    />
-                    <a href={url} target="_blank" rel="noopener noreferrer">
-                    Abrir tarjeta en nueva pestaña
-                    </a>
+       {url ? (
+        <>
+         <a href={url} target="_blank" rel="noopener noreferrer">
+            Abrir tarjeta en nueva pestaña
+            </a>
 
-                </>)
-
-            : (
-                <p>Creando tarjeta...</p>
-                )
-        }
-
+            <iframe
+            src={url}
+            title="Tarjeta creada"
+            width="100%"
+            height="600"
+            style={{ border: "none", marginTop: "20px" }}
+        />
+            </>
+            ) : (
+            <p>Creando tarjeta...</p>
+            )}
         <div className='shareButtons'>
             <button
                 className="button--large"
