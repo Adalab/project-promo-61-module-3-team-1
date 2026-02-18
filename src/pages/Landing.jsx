@@ -34,17 +34,17 @@ export default function Landing() {
       
 
       <div className="landing__header">
-        <h1 className="landing__title">Proyectos Molones</h1>
+        <h1 className="landing__title">Project Board</h1>
 
         <p className="landing__subtitle">
-          Escaparate en línea para recoger ideas a través de la tecnología.
+          Generate a shareable visual card for your projects.
         </p>
 
         <button
           className="landing__button"
           onClick={() => navigate("/form")}
         >
-          NUEVO PROYECTO
+          CREATE NEW PROJECT
         </button>
       </div>
 
@@ -64,6 +64,9 @@ export default function Landing() {
             </span>
           </div>
         ))}
+      </div>
+      <div>
+        <h2>Share it on social media</h2>
       </div>
 
       

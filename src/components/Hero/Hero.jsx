@@ -5,7 +5,7 @@ const Hero = () => {
 
     return (
         <section className="hero">
-            <h2 className="title">Proyectos molones</h2>
+            <h2 className="title">ProjectBoard</h2>
             <p className="hero__text">Escaparate en línea para recoger ideas a través de la tecnología</p>
             <Link to="/"className="button--link">Ver proyectos</Link>
         </section>

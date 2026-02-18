@@ -13,7 +13,7 @@ const Header = () => {
         className="header__logo"
         onClick={() => navigate("/")}
       >
-        Proyectos Molones
+        ProjectBoard
       </div>
 
       <nav className={`header__nav ${menuOpen ? "active" : ""}`}>

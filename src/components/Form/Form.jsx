@@ -20,8 +20,7 @@ const Form = ({ formData, setFormData, updateProjectAvatar, resetForm }) => {
     const handleSubmit = (ev) => {
         
             ev.preventDefault();
-            
-                    
+                   
             navigate("/cardPage");
         };
 
