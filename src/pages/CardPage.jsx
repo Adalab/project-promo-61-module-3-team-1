@@ -27,9 +27,7 @@ const CardPage =  ({ formData}) => {
 
        {url ? (
         <>
-         <a href={url} target="_blank" rel="noopener noreferrer">
-            Abrir tarjeta en nueva pestaña
-            </a>
+         
 
             <iframe
             src={url}
@@ -37,28 +35,45 @@ const CardPage =  ({ formData}) => {
             width="100%"
             height="600"
             style={{ border: "none", marginTop: "20px" }}
-        />
+            />
+
+            <a href={url} target="_blank" rel="noopener noreferrer" className='linkWindow npm run dev
+            '>
+            Abrir tarjeta en nueva pestaña
+            </a>
+
             </>
             ) : (
             <p>Creando tarjeta...</p>
             )}
+
+    {/*LOS BOTONES NO LANZAN LA PREVIEW A RRSS PORQUE PESA MUCHO, PROBLEMA DE BACK DE LA API*/ }
         <div className='shareButtons'>
             <button
                 className="button--large"
                 >
-                <ShareLinkedIn />
+                <ShareLinkedIn  
+                    url={url}
+                    
+                />
             </button>
             
             <button
                 className="button--large"
                 >
-                <ShareWhatsApp />
+                <ShareWhatsApp 
+                    url={url}
+                    title="Mira mi proyecto"
+                    />
             </button>
 
             <button
                 className="button--large"
                 >
-                <ShareTwitter />
+                <ShareTwitter 
+                    url={url}
+                    title="Mira mi proyecto"
+                    />
             </button>
 
         </div>

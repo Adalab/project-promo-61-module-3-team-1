@@ -1,11 +1,12 @@
 import { FaXTwitter } from "react-icons/fa6";
 
 const ShareTwitter = ({ url, title }) => {
-  const text = encodeURIComponent(`${title} ${url}`);
+  const encodedTitle = encodeURIComponent(title);
+  const encodedUrl = encodeURIComponent(url);
 
   return (
     <a
-      href={`https://twitter.com/intent/tweet?text=${text}`}
+      href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
       target="_blank"
       rel="noopener noreferrer"
       className="butShare"

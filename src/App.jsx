@@ -15,6 +15,8 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Landing from './pages/Landing';
 import CardPage from './pages/CardPage';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects';
 
 
 
@@ -118,6 +120,16 @@ function App() {
       <Route
         path="/cardPage"
         element={<CardPage formData={formData} />}
+      />
+      {/* Página Contact */}
+      <Route
+        path="/Contact"
+        element={<Contact/>}
+      />
+       {/* Página Projects */}
+      <Route
+        path="/Projects"
+        element={<Projects/>}
       />
 
     </Routes>

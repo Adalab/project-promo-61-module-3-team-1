@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
+import { Link } from "react-router-dom";
+
+
 
 const Header = () => {
   const navigate = useNavigate();
@@ -24,13 +27,11 @@ const Header = () => {
           Inicio
         </span>
 
-        <span className="header__link">
-          Proyectos
-        </span>
+        
+        <Link to="/Projects"className="header__link">Proyectos</Link>
 
-        <span className="header__link">
-          Contacto
-        </span>
+       
+        <Link to="/Contact"className="header__link">Contacto</Link>
       </nav>
 
       <div 
