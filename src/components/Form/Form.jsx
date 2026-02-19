@@ -33,17 +33,17 @@ const Form = ({ formData, setFormData, updateAuthorAvatar, updateProjectAvatar, 
                 <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
                 <input className="addForm__input" type="text" id="name" placeholder="Nombre del proyecto" required name="name" value={formData.name} onChange={handleInput} />
 
-                <input className="addForm__input" type="text" id="slogan" placeholder="Eslogan" name="slogan" value={formData.slogan} onChange={handleInput} />
+                <input className="addForm__input" type="text" id="slogan" placeholder="Eslogan" required name="slogan" value={formData.slogan} onChange={handleInput} />
 
                 <div className="addForm__2col">
-                    <input className="addForm__input" type="url" id="repo" placeholder="Link al repositorio" name="repo" value={formData.repo} onChange={handleInput} />
+                    <input className="addForm__input" type="url" id="repo" placeholder="Link al repositorio" required name="repo" value={formData.repo} onChange={handleInput} />
 
-                    <input className="addForm__input" type="url" id="demo" placeholder="Link a la demo" name="demo" value={formData.demo} onChange={handleInput} />
+                    <input className="addForm__input" type="url" id="demo" placeholder="Link a la demo" required name="demo" value={formData.demo} onChange={handleInput} />
                 </div>         
 
                 <input className="addForm__input" type="text" id="technologies" placeholder="Tecnologías" required name="technologies" value={formData.technologies} onChange={handleInput} />
 
-                <textarea className="addForm__input" type="text" id="desc" placeholder="Descripción" rows="5" minLength={20} maxLength={300} name="desc" value={formData.desc} onChange={handleInput} ></textarea>
+                <textarea className="addForm__input" type="text" id="desc" placeholder="Descripción" rows="5" minLength={20} maxLength={300} required name="desc" value={formData.desc} onChange={handleInput} ></textarea>
             </fieldset>
         
             <fieldset className="addForm__group">
@@ -51,7 +51,7 @@ const Form = ({ formData, setFormData, updateAuthorAvatar, updateProjectAvatar, 
 
                 <input className="addForm__input" type="text" id="autor" placeholder="Nombre" required name="autor" value={formData.autor} onChange={handleInput} />
 
-                <input className="addForm__input" type="text" id="job" placeholder="Trabajo" name="job" value={formData.job} onChange={handleInput} />
+                <input className="addForm__input" type="text" id="job" placeholder="Trabajo" required name="job" value={formData.job} onChange={handleInput} />
             </fieldset>
         
             <fieldset className="addForm__group--upload">
@@ -59,6 +59,7 @@ const Form = ({ formData, setFormData, updateAuthorAvatar, updateProjectAvatar, 
                 avatar={formData.image}
                 updateAvatar={updateProjectAvatar}
                 text="Subir foto del proyecto"
+                required
                 />
                 {/* <label htmlFor="image" className="button">Subir foto del proyecto</label> */}
 
@@ -68,6 +69,7 @@ const Form = ({ formData, setFormData, updateAuthorAvatar, updateProjectAvatar, 
                 avatar={formData.photo}
                 updateAvatar={updateAuthorAvatar}
                 text="Subir foto de la autora"
+                required
                 />
 
                 {/* <label htmlFor="photo" className="button">Subir foto de la autora</label>

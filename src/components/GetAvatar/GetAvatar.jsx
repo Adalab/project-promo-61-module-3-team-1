@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import defaultAvatar from "../../images/defaultAvatar.png";
 import "./GetAvatar.scss";
 
-function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
+function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!', required }) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -65,9 +65,16 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text='Get avatar!'}) {
         <input
           type="file"
           ref={myFileField}
-          style={{ display: 'none' }}
+          style={{ 
+              position: 'absolute',
+              width: '1px',
+              height: '1px',
+              opacity: 0,
+              overflow: 'hidden'
+            }}
           onChange={uploadImage}
           accept="image/*"
+          required={required && !avatar}
         />
       </label>
 
