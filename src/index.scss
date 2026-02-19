@@ -1,10 +1,12 @@
-@import './styles/tokens';
+/* RESET */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* BASE */
 
 :root {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -22,7 +24,7 @@ html, body {
 body {
   min-width: 320px;
   background-color: #F5F5F4;
-  color: $text-primary;
+  color: #1a1a1a;
 }
 
 /* Links */
@@ -38,14 +40,14 @@ a:hover {
   color: #8B5CF6;
 }
 
-
+/* Headings */
 
 h1, h2, h3 {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-
+/* Buttons */
 
 button {
   font-family: inherit;

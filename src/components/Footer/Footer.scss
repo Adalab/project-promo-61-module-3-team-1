@@ -1,13 +1,10 @@
-@use '../../styles/tokens' as *;
-
-
 .page__footer {
   width: 100%;
   padding: 25px 20px;
   text-align: center;
-  background-color: $bg-surface;
-  border-top: 1px solid $border-subtle;
-  color: $text-secondary;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
   font-size: 14px;
 }
 
@@ -16,7 +13,7 @@
 }
 
 .link__adalab {
-  color: $accent;
+  color: #6c5ce7;
   font-weight: 600;
   margin-left: 5px;
   text-decoration: none;
@@ -24,6 +21,6 @@
 }
 
 .link__adalab:hover {
-  color: $accent-hover;
+  color: #5a4bd1;
   text-decoration: underline;
 }

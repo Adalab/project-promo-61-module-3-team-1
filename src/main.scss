@@ -386,7 +386,7 @@ fieldset {
 }
 
 
-/* contenedor general */
+
 .addForm__group--upload {
   display: flex;
   flex-wrap: wrap;
@@ -394,18 +394,18 @@ fieldset {
   gap: 16px;
 }
 
-/* hace que los componentes avatar no ocupen toda la fila */
+
 .addForm__group--upload .get-avatar {
   flex: 0 0 auto;
 }
 
-/* centra los botones internos */
+
 .get-avatar {
   display: flex;
   justify-content: center;
 }
 
-/* guardar y reset juntos debajo */
+
 .addForm__group--upload button {
   margin-top: 10px;
 }

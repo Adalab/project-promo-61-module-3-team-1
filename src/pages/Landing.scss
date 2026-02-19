@@ -1,11 +1,8 @@
-@use '../styles/tokens' as *;
-@use '../styles/mixins' as *;
-
 .landing {
   min-height: 100vh;
-  background-color: $bg-main;
+  background-color: #f9fafb;
   padding: 60px 40px;
-  color: $text-primary;
+  color: #1a1a1a;
   text-align: center;
 
   display: flex;
@@ -16,26 +13,31 @@
   }
 
   &__title {
-    font: $font-title-xl;
+    font: 700 48px/1.1 'Inter', sans-serif;
     margin-bottom: 10px;
   }
 
   &__subtitle {
-    font: $font-text-lg;
-    color: $text-secondary;
+    font: 400 18px/1.4 'Inter', sans-serif;
+    color: #6b7280;
     margin-bottom: 25px;
   }
 
   &__button {
-    @include button-primary;
+    background: #6c5ce7;
+    color: white;
+    font: 600 14px/1 'Inter', sans-serif;
     padding: 12px 28px;
     border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
 
-    &:hover {
-      @include button-primary-hover;
-      transform: translateY(-2px);
-      box-shadow: $shadow-soft;
-    }
+  &__button:hover {
+    background: #5a4bd1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   }
 
   &__grid {
@@ -50,11 +52,12 @@
   }
 
   &__card {
-    @include card;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     padding: 30px;
     text-align: left;
     border: 1px solid #E5E7EB;
-    
   }
 
   &__card-image {
@@ -65,14 +68,14 @@
   }
 
   &__card-title {
-    font: $font-title-md;
+    font: 600 22px/1.2 'Inter', sans-serif;
     margin-bottom: 10px;
-    color: $text-primary;
+    color: #1a1a1a;
   }
 
   &__card-text {
-    font: $font-small;
-    color: $text-secondary;
+    font: 400 14px/1.5 'Inter', sans-serif;
+    color: #6b7280;
     line-height: 1.5;
   }
 }
@@ -113,6 +116,7 @@
     }
   }
 }
+
 
 .imgChicas {
 
