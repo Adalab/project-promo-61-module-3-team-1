@@ -4,13 +4,14 @@
   padding: 60px 40px;
   color: #1a1a1a;
   text-align: center;
-
   display: flex;
   flex-direction: column;
 
   &__header {
     margin-bottom: 60px;
   }
+
+  
 
   &__title {
     font: 700 48px/1.1 'Inter', sans-serif;
@@ -52,7 +53,7 @@
   }
 
   &__card {
-    background: #ffffff;
+    background: #F3F4F6;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     padding: 30px;
@@ -151,4 +152,5 @@
   display: flex;
   justify-content: center;
   padding-top: 1rem;
+  color: white;
 }
