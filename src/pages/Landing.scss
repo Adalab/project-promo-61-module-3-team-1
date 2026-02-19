@@ -4,14 +4,13 @@
   padding: 60px 40px;
   color: #1a1a1a;
   text-align: center;
+
   display: flex;
   flex-direction: column;
 
   &__header {
     margin-bottom: 60px;
   }
-
-  
 
   &__title {
     font: 700 48px/1.1 'Inter', sans-serif;
